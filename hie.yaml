@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "./lnurl/src"
+      component: "lib:lnurl"
+
+    - path: "./lnurl-authenticator/src"
+      component: "lib:lnurl-authenticator"
+
+    - path: "./lnurl-authenticator/exec/Main.hs"
+      component: "lnurl-authenticator:exe:lnurl-authenticator"

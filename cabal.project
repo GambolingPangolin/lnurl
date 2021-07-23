@@ -1,0 +1,3 @@
+packages:
+  ./lnurl
+  ./lnurl-authenticator
