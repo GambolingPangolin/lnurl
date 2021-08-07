@@ -1,5 +1,7 @@
 cabal-version: 2.4
 name: lnurl
+synopsis: Support for developing against the LNURL protocol
+description: See https://github.com/GambolingPangolin/lnurl/blob/master/lnurl/README.md
 version: 0.1.0.0
 license: BSD-3-Clause
 license-file: LICENSE

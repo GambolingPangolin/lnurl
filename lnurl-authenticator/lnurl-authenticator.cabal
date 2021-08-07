@@ -1,5 +1,7 @@
 cabal-version: 2.4
 name: lnurl-authenticator
+synopsis: A command line tool to manage LNURL auth identities
+description: See https://github.com/GambolingPangolin/lnurl/blob/master/lnurl-authenticator/README.md
 version: 0.1.0.0
 license: BSD-3-Clause
 license-file: LICENSE
