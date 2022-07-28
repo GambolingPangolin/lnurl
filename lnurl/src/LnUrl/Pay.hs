@@ -64,7 +64,6 @@ import Data.Aeson (
     (.:?),
     (.=),
  )
-import qualified Data.Aeson as Ae
 import Data.Bifunctor (first)
 import Data.ByteString (ByteString)
 import qualified Data.ByteString as BS
@@ -77,7 +76,6 @@ import Data.Maybe (catMaybes, fromMaybe)
 import Data.Text (Text)
 import qualified Data.Text as Text
 import Data.Text.Encoding (encodeUtf8)
-import qualified Data.Text.Lazy.Encoding as TL
 import Data.Word (Word64)
 import Haskoin (PubKey, exportPubKey)
 import LnUrl (NodeId, Response (..))
@@ -110,7 +108,7 @@ instance FromJSON SuccessResponse where
             <$> (getJsonURI <$> obj .: "callback")
             <*> obj .: "maxSendable"
             <*> obj .: "minSendable"
-            <*> (obj .: "metadata" >>= either fail pure . Ae.eitherDecode . TL.encodeUtf8)
+            <*> (obj .: "metadata")
             <*> obj .:? "commentAllowed"
 
 instance ToJSON SuccessResponse where
@@ -119,7 +117,7 @@ instance ToJSON SuccessResponse where
             [ "callback" .= (JsonURI . callback) response
             , "maxSendable" .= maxSendable response
             , "minSendable" .= minSendable response
-            , "metadata" .= (TL.decodeUtf8 . Ae.encode . metadata) response
+            , "metadata" .= metadata response
             ]
                 <> catMaybes ["commentAllowed" .=? commentAllowed response]
 
@@ -129,7 +127,7 @@ data SuccessResponse = SuccessResponse
     -- ^ millisatoshi
     , minSendable :: Word64
     -- ^ millisatoshi
-    , metadata :: [Metadata]
+    , metadata :: Text
     , commentAllowed :: Maybe Int
     }
     deriving (Eq, Show)
