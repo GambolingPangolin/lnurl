@@ -9,6 +9,7 @@ module LnUrl.Utils (
 
 import Data.Aeson (
     FromJSON,
+    Key,
     ToJSON,
     Value,
     parseJSON,
@@ -19,7 +20,6 @@ import Data.Aeson (
 import Data.ByteString (ByteString)
 import Data.ByteString.Base16 (decodeBase16, encodeBase16)
 import Data.ByteString.Base64 (decodeBase64, encodeBase64)
-import Data.Text (Text)
 import qualified Data.Text as Text
 import Data.Text.Encoding (encodeUtf8)
 import Network.URI (URI, parseURI)
@@ -61,5 +61,5 @@ instance FromJSON JsonURI where
 instance ToJSON JsonURI where
     toJSON = toJSON . show . getJsonURI
 
-(.=?) :: ToJSON a => Text -> Maybe a -> Maybe (Text, Value)
+(.=?) :: ToJSON a => Key -> Maybe a -> Maybe (Key, Value)
 k .=? mv = (k .=) <$> mv

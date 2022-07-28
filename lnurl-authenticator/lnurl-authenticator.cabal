@@ -2,7 +2,7 @@ cabal-version: 2.4
 name: lnurl-authenticator
 synopsis: A command line tool to manage LNURL auth identities
 description: See https://github.com/GambolingPangolin/lnurl/blob/master/lnurl-authenticator/README.md
-version: 0.1.0.0
+version: 0.1.0.1
 license: BSD-3-Clause
 license-file: LICENSE
 author: Ian Shipman
@@ -29,27 +29,27 @@ common core
         -fno-warn-unused-do-bind
 
     build-depends:
-      base >=4.14 && <4.16
+      base >=4.14 && <4.17
 
 library
     import: core
     hs-source-dirs: src
     build-depends:
-        aeson ^>=1.5
+        aeson >=1.5 && <2.2
       , bech32 ^>=1.1
       , bytestring >=0.10 && <0.12
       , containers ^>=0.6
-      , cryptonite ^>=0.29
+      , cryptonite >=0.29 && <0.31
       , directory ^>=1.3
       , filepath ^>=1.4
       , haskeline ^>=0.8
-      , haskoin-core ^>=0.20
+      , haskoin-core >=0.20 && <0.22
       , http-client ^>=0.7
       , http-client-tls ^>=0.3
       , lnurl ^>=0.1
-      , memory ^>=0.16
-      , text ^>=1.2
-      , time >=1.9 && <1.13
+      , memory >=0.16 && <0.18
+      , text >=1.2 && <2.1
+      , time >=1.9 && <1.14
 
     exposed-modules:
         LnUrl.Authenticator
@@ -63,4 +63,4 @@ executable lnurl-authenticator
     build-depends:
         Clipboard ^>=2.3
       , lnurl-authenticator
-      , optparse-applicative ^>=0.16
+      , optparse-applicative >=0.16 && <0.18
