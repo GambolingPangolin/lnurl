@@ -125,10 +125,10 @@ instance ToJSON SuccessResponse where
 
 data SuccessResponse = SuccessResponse
     { callback :: URI
-    , -- | millisatoshi
-      maxSendable :: Word64
-    , -- | millisatoshi
-      minSendable :: Word64
+    , maxSendable :: Word64
+    -- ^ millisatoshi
+    , minSendable :: Word64
+    -- ^ millisatoshi
     , metadata :: [Metadata]
     , commentAllowed :: Maybe Int
     }

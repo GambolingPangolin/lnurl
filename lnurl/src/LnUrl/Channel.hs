@@ -49,12 +49,12 @@ import Network.URI.Utils (addQueryParams)
 
 -- | @LN SERVICE@ responds with 'Response' 'SuccessResponse'
 data SuccessResponse = SuccessResponse
-    { -- | Remote node URI
-      remoteNode :: ByteString
-    , -- | Service URL
-      callback :: URI
-    , -- | Wallet identifier
-      k1 :: ByteString
+    { remoteNode :: ByteString
+    -- ^ Remote node URI
+    , callback :: URI
+    -- ^ Service URL
+    , k1 :: ByteString
+    -- ^ Wallet identifier
     }
     deriving (Eq, Show)
 
