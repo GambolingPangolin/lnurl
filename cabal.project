@@ -1,3 +1,4 @@
 packages:
   ./lnurl
   ./lnurl-authenticator
+  ./lnurl-payment-tool

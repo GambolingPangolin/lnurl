@@ -3,6 +3,12 @@ cradle:
     - path: "./lnurl/src"
       component: "lib:lnurl"
 
+    - path: "./lnurl-payment-tool/exec/Main.hs"
+      component: "lnurl-payment-tool:exe:lnurl-payment-tool"
+
+    - path: "./lnurl-payment-tool/src"
+      component: "lnurl-payment-tool:exe:lnurl-payment-tool"
+
     - path: "./lnurl-authenticator/src"
       component: "lib:lnurl-authenticator"
 
