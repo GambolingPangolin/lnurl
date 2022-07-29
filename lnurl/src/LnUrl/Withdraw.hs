@@ -49,12 +49,12 @@ data SuccessResponse = SuccessResponse
     { callback :: URI
     , challenge :: Text
     , defaultDescription :: Text
-    , -- | millisatoshis
-      minWithdrawable :: Word64
-    , -- | millisatoshis
-      maxWithdrawable :: Word64
-    , -- | URL to use to make a subsequent LNURL-withdraw request, response with 'SuccessResponse'
-      balanceCheck :: Maybe URI
+    , minWithdrawable :: Word64
+    -- ^ millisatoshis
+    , maxWithdrawable :: Word64
+    -- ^ millisatoshis
+    , balanceCheck :: Maybe URI
+    -- ^ URL to use to make a subsequent LNURL-withdraw request, response with 'SuccessResponse'
     }
     deriving (Eq, Show)
 
@@ -82,6 +82,7 @@ instance ToJSON SuccessResponse where
 -- | Use the first response to build the callback url
 getCallbackURL ::
     SuccessResponse ->
+    -- | Payment request
     Text ->
     -- | URL where @LN SERVICE@ can POST 'SuccessResponse' values to notify the wallet
     Maybe URI ->

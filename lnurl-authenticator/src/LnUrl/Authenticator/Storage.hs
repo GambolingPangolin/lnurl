@@ -143,7 +143,8 @@ encryptJsonFile userKey path value = do
     BS.writeFile path $
         salt
             <> convert iv
-            <> ( cbcEncrypt aes iv . pad paddingScheme
+            <> ( cbcEncrypt aes iv
+                    . pad paddingScheme
                     . BSL.toStrict
                     . encode
                )

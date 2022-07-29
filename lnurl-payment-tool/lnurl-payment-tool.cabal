@@ -1,0 +1,36 @@
+cabal-version: 2.4
+name: lnurl-payment-tool
+synopsis: Command line tool for the LNURL pay, withdraw, and channel workflows
+description: See https://github.com/GambolingPangolin/lnurl/blob/master/lnurl-payment-tool/README.md
+version: 0.1.0.0
+license: BSD-3-Clause
+license-file: LICENSE
+author: Ian Shipman
+maintainer: ics@gambolingpangolin.com
+extra-source-files: CHANGELOG.md
+
+executable lnurl-payment-tool
+    main-is: Main.hs
+    hs-source-dirs: exec, src
+    default-language: Haskell2010
+
+    other-modules:
+        LnUrl.Tool.Pay
+        LnUrl.Tool.Utils
+        LnUrl.Tool.Withdraw
+
+    build-depends:
+        aeson >=1.5 && <2.2
+      , base ^>=4.16.1.0
+      , base16 ^>=0.3
+      , base64 ^>=0.4
+      , bech32 ^>=1.1
+      , bytestring >=0.10 && <0.12
+      , cryptonite >=0.29 && <0.31
+      , http-client ^>=0.7
+      , http-client-tls ^>=0.3
+      , lnurl ^>=0.1
+      , memory >=0.16 && <0.18
+      , network-uri >=2.6 && <2.8
+      , optparse-applicative >=0.16 && <0.18
+      , text >=1.2 && <2.2
