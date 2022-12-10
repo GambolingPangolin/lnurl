@@ -21,7 +21,7 @@ executable lnurl-payment-tool
 
     build-depends:
         aeson >=1.5 && <2.2
-      , base ^>=4.16.1.0
+      , base >=4.16.1.0 && <4.18
       , base16 ^>=0.3
       , base64 ^>=0.4
       , bech32 ^>=1.1
@@ -30,7 +30,7 @@ executable lnurl-payment-tool
       , http-client ^>=0.7
       , http-client-tls ^>=0.3
       , lnurl ^>=0.1
-      , memory >=0.16 && <0.18
+      , memory >=0.16 && <0.19
       , network-uri >=2.6 && <2.8
       , optparse-applicative >=0.16 && <0.18
       , text >=1.2 && <2.2

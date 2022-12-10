@@ -42,7 +42,7 @@ library
 
     build-depends:
           aeson >=2.0 && <2.2
-        , base >=4.14 && <4.17
+        , base >=4.14 && <4.18
         , base16 ^>=0.3
         , base64 ^>=0.4
         , bytestring >=0.10 && <0.12
@@ -51,6 +51,6 @@ library
         , extra ^>=1.7
         , haskoin-core >=0.20 && <0.22
         , http-types ^>=0.12
-        , memory >=0.16 && <0.18
+        , memory >=0.16 && <0.19
         , network-uri >=2.6 && <2.8
         , text >=1.2 && <2.1
